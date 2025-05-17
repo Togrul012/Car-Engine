@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maşın Mühərrikləri - Geniş Məlumat</title>
+<link rel="icon" href="logo.jpg">
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2c3e50;
+    min-height: 100vh;
+  }
+
+
+  h1 {
+    font-weight: 800;
+    font-size: 3rem;
+    color: #34495e;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 1.2px;
+    max-width: 900px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+
+  #buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 920px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+
+  button {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    border: none;
+    padding: 16px 0;
+    border-radius: 15px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(22, 160, 133, 0.35);
+    transition: 
+      background 0.3s ease,
+      transform 0.2s ease,
+      box-shadow 0.3s ease;
+    user-select: none;
+    text-align: center;
+  }
+
+  button:hover {
+    background: linear-gradient(135deg, #16a085, #1abc9c);
+    box-shadow: 0 12px 28px rgba(22, 160, 133, 0.6);
+    transform: translateY(-4px);
+  }
+
+  button:focus-visible {
+    outline: 3px solid #27ae60;
+    outline-offset: 4px;
+  }
+
+
+  #content {
+    max-width: 850px;
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.07);
+    color: #34495e;
+    text-align: left;
+    line-height: 1.75;
+    font-size: 1.15rem;
+    user-select: text;
+  }
+
+  #content h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #27ae60;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 2px rgba(39, 174, 96, 0.3);
+  }
+
+
+  #content strong {
+    color: #16a085;
+    font-weight: 700;
+  }
+
+
+  #content p {
+    margin-bottom: 1.3rem;
+  }
+
+
+  #images {
+    margin-top: 35px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #images img {
+    width: 28%;
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(22, 160, 133, 0.3);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    object-fit: cover;
+    filter: drop-shadow(0 4px 6px rgba(22, 160, 133, 0.15));
+  }
+
+  #images img:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 24px 48px rgba(22, 160, 133, 0.5);
+    filter: drop-shadow(0 6px 8px rgba(22, 160, 133, 0.3));
+  }
+
+
+  @media (max-width: 768px) {
+    body {
+      padding: 30px 15px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      padding: 0 10px;
+      max-width: 100%;
+    }
+    #buttons {
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 16px;
+      max-width: 100%;
+    }
+    button {
+      font-size: 1rem;
+      padding: 14px 0;
+      border-radius: 12px;
+    }
+    #content {
+      padding: 30px 25px;
+      font-size: 1rem;
+      max-width: 100%;
+    }
+    #images img {
+      width: 45%;
+      border-radius: 14px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    button {
+      font-size: 0.95rem;
+    }
+    #images img {
+      width: 90%;
+      border-radius: 12px;
+    }
+  }
+</style>
+</head>
+<body background="arxa fon.jpg">
+
+<h1>Maşın Mühərrikləri Haqqında Geniş Məlumat</h1>
+
+<div id="buttons">
+  <button data-engine="gasoline">Benzin Mühərriki</button>
+  <button data-engine="diesel">Dizel Mühərriki</button>
+  <button data-engine="hybrid">Hibrid Mühərrik</button>
+  <button data-engine="rotary">Rotary Mühərriki</button>
+  <button data-engine="v12">V12 Mühərriki</button>
+  <button data-engine="electric">Elektrik Mühərriki</button>
+  <button data-engine="turbo">Turbo Mühərriki</button>
+  <button data-engine="boxer">Boxer Mühərriki</button>
+  <button data-engine="supercharged">Supercharged Mühərrik</button>
+  <button data-engine="hydrogen">Hidrojen Mühərriki</button>
+</div>
+
+<div id="content">
+  <h2>Xahiş edirəm, mühərrik seçin.</h2>
+  <div id="text"></div>
+  <div id="images"></div>
+</div>
+
+<script>
+  const engines = {
+    gasoline: {
+      title: "Benzin Mühərriki",
+      text: `
+        <strong>Ümumi məlumat:</strong><br>
+        Benzin mühərrikləri daxili yanma mühərrikləri olub, yanacaq kimi benzin istifadə edir. Yüksək sürət və performans üçün geniş yayılıb.<br><br>
+        <strong>Texniki xüsusiyyətlər:</strong><br>
+        - Yanacaq növü: Benzin<br>
+        - Yanma prinsipi: Atəşlənmə bujilər vasitəsilə<br>
+        - Güc və sürətə fokus<br><br>
+        <strong>Üstünlükləri:</strong><br>
+        - Yüksək güc və çeviklik<br>
+        - Daha sakit işləmə<br><br>
+        <strong>Zəif tərəfləri:</strong><br>
+        - Yanacaq sərfiyyatı yüksək ola bilər<br>
+        - Emissiyalar digər növlərə nisbətən yüksəkdir<br><br>
+        <strong>Məşhur nümunələr:</strong><br>
+        BMW M54, Toyota 2JZ-GTE.
+      `,
+      images: [
+        'https://5.imimg.com/data5/EV/LL/MY-9575016/petrol-engine-1000x1000.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/8/8b/V6-Typical.gif',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/IC_engine.JPG/960px-IC_engine.JPG'
+      ]
+    },
+    diesel: {
+      title: "Dizel Mühərriki",
+      text: `
+        <strong>Ümumi məlumat:</strong><br>
+        Dizel mühərrikləri yanacaq kimi dizel istifadə edən daxili yanma mühərrikləridir. Daha effektiv yanacaq sərfiyyatı və yüksək tork gücü ilə seçilir.<br><br>
+        <strong>Texniki xüsusiyyətlər:</strong><br>
+        - Yanacaq növü: Dizel<br>
+        - Yanma prinsipi: Sıxılma ilə atəşlənmə<br>
+        - Yüksək tork və yanacaq effekti<br><br>
+        <strong>Üstünlükləri:</strong><br>
+        - Yanacaq effektivliyi yüksəkdir<br>
+        - Uzunömürlülük və güclü tork<br><br>
+        <strong>Zəif tərəfləri:</strong><br>
+        - Daha yüksək səs-küy<br>
+        - Çox vaxt əlavə filtr və təmizləyici sistemlər tələb edir<br><br>
+        <strong>Məşhur nümunələr:</strong><br>
+        Mercedes-Benz OM617, Cummins ISX.
+      `,
+      images: [
+        'https://poweredsolutions.gm.com/content/dam/gmpoweredsolutions/na/us/en/shared-assets/engines/01-images/gmps-shared-engine-lwn-duramax.png?imwidth=1920',
+        'https://i.makeagif.com/media/12-28-2017/6T3HSC.gif',
+        'https://media.tenor.com/OuSLFYdLdGIAAAAM/suck-squeeze.gif'
+      ]
+    },
+    hybrid: {
+      title: "Hibrid Mühərrik",
+      text: `
+        <strong>Ümumi məlumat:</strong><br>
+        Hibrid mühərriklər benzin və elektrik mühərriklərinin kombinasiyasıdır. Yanacaq sərfiyyatını azaldır və ekoloji dostudur.<br><br>
+        <strong>Texniki xüsusiyyətlər:</strong><br>
+        - Yanacaq növü: Benzin + Elektrik<br>
+        - İki növ enerji mənbəyi<br><br>
+        <strong>Üstünlükləri:</strong><br>
+        - Yanacaq qənaəti<br>
+        - Azaldılmış emissiyalar<br><br>
+        <strong>Zəif tərəfləri:</strong><br>
+        - Yüksək qiymət<br>
+        - Texniki komplekslik<br><br>
+        <strong>Məşhur nümunələr:</strong><br>
+        Toyota Prius, Honda Insight.
+      `,
+      images: [
+        'https://egifts.gr/wp-content/uploads/2022/04/TRHY14-2.jpg',
+        'https://i.makeagif.com/media/10-18-2015/GL5qdF.gif',
+        'https://www.planete-energies.com/sites/default/files/mini-site/2023-01/hybrides_0.zip-extract/asset/gifs/onglet3.gif'
+      ]
+    },
+    rotary: {
+      title: "Rotary (Vankel) Mühərriki",
+      text: `
+        <strong>Ümumi məlumat:</strong><br>
+        Rotary mühərriklər fərqli dizaynı ilə klassik piston mühərriklərdən fərqlənir. Kompakt ölçüləri və yüksək RPM ilə məşhurdur.<br><br>
+        <strong>Texniki xüsusiyyətlər:</strong><br>
+        - Yanacaq növü: Benzin<br>
+        - Döner rotor dizaynı<br><br>
+        <strong>Üstünlükləri:</strong><br>
+        - Yüksək güc/həcim nisbəti<br>
+        - Daha az hərəkətli hissə<br><br>
+        <strong>Zəif tərəfləri:</strong><br>
+        - Aşağı yanacaq effektivliyi<br>
+        - Mürəkkəb texniki xidmət<br><br>
+        <strong>Məşhur nümunələr:</strong><br>
+        Mazda RX-7, Mazda RX-8.
+      `,
+      images: [
+        'https://automotive.technolab.org/image/cache/catalog/products/Wankel_Kreiskolb_4faba9e19777c-500x500.jpg',
+        'https://media4.giphy.com/media/8QwLCDBTXAyxa/giphy.gif?cid=6c09b952l5v0kncadtv31z9c0spejsaiffp7yphyvvsmrprk&ep=v1_gifs_search&rid=giphy.gif&ct=g',
+        'https://i.gifer.com/origin/fc/fc0f636cc0e10f951cdc3d034e3f7ff9_w200.gif'
+      ]
+    },
+     v12: {
+    title: "V12 Mühərriki",
+    text: `
+      <strong>V12 Mühərrik:</strong><br>
+      V12 mühərriki 12 silindrli, 2 sıra halında V formasında düzülmüş silindrlərdən ibarətdir. Son dərəcə hamar işləmə və prestijli performans üçün avtomobil tarixində ikonik sayılır.<br><br>
+      <strong>Üstünlüklər:</strong><br>
+      - Hamar işləmə<br>
+      - Yüksək at gücü<br>
+      - Luks avtomobillər və superkarlar üçün ideal<br><br>
+      <strong>Nümunə:</strong><br>
+      Ferrari 812 Superfast, Mercedes S600.
+    `,
+    images: [
+      "https://www.goodwood.com/globalassets/.road--racing/road/news/2022/2-february/list-best-v12s/best-v12-engines-ever-1-mercedes-m120-28022022.jpg?rxy=0.5,0.5",
+      "https://i.pinimg.com/originals/92/3d/48/923d48ab56f429aec5af55ea36d50775.gif"
+    ]
+  },
+  boxer: {
+    title: "Boxer Mühərriki",
+    text: `
+      <strong>Boxer Mühərriki:</strong><br>
+      Bu mühərrik tipində silindrlər qarşı-qarşıya horizontal şəkildə düzülür. Çəki mərkəzi aşağıda olduğu üçün idarə etmə üstünlüyü verir.<br><br>
+      <strong>Faydaları:</strong><br>
+      - Aşağı çəki mərkəzi<br>
+      - Yaxşı balans<br>
+      - Kompakt dizayn<br><br>
+      <strong>Nümunə:</strong><br>
+      Subaru Boxer, Porsche 911.
+    `,
+    images: [
+      "https://www.polo-motorrad.com/dw/image/v2/BDGS_PRD/on/demandware.static/-/Sites-polo-master/default/dwfc791df9/images/5734091/main/de000846232.jpg?sw=500&sfrm=jpg",
+      "https://i.makeagif.com/media/5-24-2016/7pBixa.gif"
+    ]
+  },
+  supercharged: {
+    title: "Supercharged Mühərrik",
+    text: `
+      <strong>Supercharger:</strong><br>
+      Supercharger mühərrikə hava daxil etməyi mexaniki yollarla artıraraq gücü böyüdür. Bu sistem birbaşa krank milindən enerji alır.<br><br>
+      <strong>Üstünlüklər:</strong><br>
+      - Turbo gecikməsi yoxdur<br>
+      - Ani reaksiya<br>
+      - Artan tork və at gücü<br><br>
+      <strong>Nümunə:</strong><br>
+      Dodge Hellcat, Mercedes-AMG.
+    `,
+    images: [
+      "https://www.automotivestuff.com/media/catalog/product/f/o/fordracing-m-6007-m52sc.jpg?quality=90&bg-color=255,255,255&fit=bounds&height=1200&width=1200&canvas=1200:1200",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Supercharger_Animation_by_Tyroola.gif/640px-Supercharger_Animation_by_Tyroola.gif"
+    ]
+  },
+  turbo: {
+    title: "Turbo Mühərriki",
+    text: `
+      <strong>Turbo Mühərrik:</strong><br>
+      Egzoz qazlarının enerjisini istifadə edərək daxil olan havanı sıxışdırıb daha çox yanacaq-hava qarışığı yaradır.<br><br>
+      <strong>Üstünlüklər:</strong><br>
+      - Effektivlik artır<br>
+      - Daha çox güc<br>
+      - Kiçik həcimli mühərriklərə uyğun<br><br>
+      <strong>Nümunə:</strong><br>
+      Volkswagen TSI, Ford EcoBoost.
+    `,
+    images: [
+      "https://5.imimg.com/data5/SELLER/Default/2024/7/435321347/AP/ZZ/KH/123574913/brand-new-jcb-engine-74kw-turbo-engine-for-jcb-500x500.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/42/Turbocharger_Animation_by_Tyroola.gif"
+    ]
+  },
+  hydrogen: {
+    title: "Hidrojen Mühərriki",
+    text: `
+      <strong>Hidrojen Mühərriki:</strong><br>
+      Ya əsl daxili yanma prinsipi ilə, ya da yanacaq elementi (fuel cell) ilə çalışır. Ekoloji baxımdan təmiz alternativdir.<br><br>
+      <strong>Üstünlüklər:</strong><br>
+      - Su buxarı emissiyası<br>
+      - Yüksək enerji effektivliyi<br>
+      - Ekoloji təmiz<br><br>
+      <strong>Nümunə:</strong><br>
+      Toyota Mirai, Hyundai Nexo.
+    `,
+    images: [
+      "https://img.directindustry.com/images_di/photo-g/55203-17421283.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4a/Motore-idrogeno_hydrogen_engine.gif"
+    ]
+  },
+  electric: {
+      title: "Elektrik Mühərriki",
+      text: `
+        <strong>Ümumi məlumat:</strong><br>
+        Elektrik mühərrikləri elektrik enerjisini mexaniki enerjiyə çevirən mühərriklərdir. Bu tip mühərriklər emissiyasız işləyir və daha sakitdir.<br><br>
+        <strong>Texniki xüsusiyyətlər:</strong><br>
+        - Enerji mənbəyi: Akkumulyator (batareya)<br>
+        - Sürətli fırlanma və yüksək tork<br>
+        - Səssiz və titrəşimsiz işləmə<br><br>
+        <strong>Üstünlükləri:</strong><br>
+        - Ekoloji təmizdir, emissiya yaratmır<br>
+        - Aşağı texniki qulluq tələbi<br>
+        - Ani tork və sürətli sürətlənmə<br><br>
+        <strong>Zəif tərəfləri:</strong><br>
+        - Şarj müddəti və batareya məhdudiyyətləri<br>
+        - İnfrastruktur (şarj stansiyaları) hələ inkişaf mərhələsindədir<br><br>
+        <strong>Məşhur nümunələr:</strong><br>
+        Tesla Model S, Nissan Leaf, BMW i3.
+      `,
+      images: [
+        'https://bioage.typepad.com/.a/6a00d8341c4fbe53ef0278803a2850200d-500wi',
+        'https://i.pinimg.com/originals/4a/08/62/4a086226fe54727450d8781b85f0f2c1.gif',
+        'https://www.kia.com/content/dam/kwcms/kme/uk/en/assets/eco_refresh/Infographic_EV.gif'
+      ]
+    },
+}
+
+  const buttons = document.querySelectorAll('#buttons button');
+  const content = document.getElementById('content');
+  const textDiv = document.getElementById('text');
+  const imagesDiv = document.getElementById('images');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-engine');
+      if (engines[key]) {
+        content.querySelector('h2').textContent = engines[key].title;
+        textDiv.innerHTML = engines[key].text;
+        imagesDiv.innerHTML = '';
+        engines[key].images.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = engines[key].title;
+          imagesDiv.appendChild(img);
+        });
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
+</script>
+
+</body>
+</html>
